@@ -252,6 +252,12 @@
     .signboard-wrap{max-width:520px;}
   }
 </style>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="카페 마가렛트">
+<meta name="theme-color" content="#FFC94A">
 </head>
 <body>
 
@@ -731,5 +737,13 @@
   });
 </script>
 
+<script>
+/* 앱 설치(PWA)용 서비스 워커 등록 */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
